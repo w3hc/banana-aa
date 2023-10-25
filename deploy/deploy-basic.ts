@@ -11,10 +11,13 @@ export default async ({ getNamedAccounts, deployments }) => {
     const { deployer } = await getNamedAccounts()
     console.log(deployer)
 
-    await deploy("Basic", {
+    const deployed = await deploy("BananaTokenIsNotLate", {
         from: deployer,
-        args: [initialMint],
+        args: [],
         log: true
     })
+
+    console.log("deployed: ", deployed.address)
+
 }
 export const tags = ["Basic"]
